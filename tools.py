@@ -1,8 +1,9 @@
 #coding:utf-8
+import shutil
 
 class Tools:
     
-    default_width = 50
+    default_width = shutil.get_terminal_size().columns / 1.5
     
     def __init__(self):
         pass
@@ -53,7 +54,6 @@ class Tools:
 
 
 if __name__ == "__main__":
-    Tools.change_width(60)
     Tools.big_title_print("Mon jolie gros titre pour le test")
     Tools.title_print("Mon petit titre pour le test")
     Tools.separator()
