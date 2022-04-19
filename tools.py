@@ -7,14 +7,27 @@ class Tools:
     def __init__(self):
         pass
         
-    def title_print(cls, title):
-        decorator = "".center(int(Tools.default_width), "=")
-        title = " " + title + " "
-        title = title.center(int(Tools.default_width), "-")
+    def big_title_print(cls, title):
+        border = "+" + "".center(int(Tools.default_width), "=") + "+"
+        contain = "|" + "".center(int(Tools.default_width), " ") + "|"
+        title = " " + title.upper() + " "
+        title = "|" + title.center(int(Tools.default_width), " ") + "|"
         print("")
-        print(decorator)
+        print(border)
+        print(contain)
         print(title)
-        print(decorator)
+        print(contain)
+        print(border)
+        print("")
+        
+    def title_print(cls, title):
+        border = "+" + "".center(int(Tools.default_width), "=") + "+"
+        title = " " + title.upper() + " "
+        title = "|" + title.center(int(Tools.default_width), " ") + "|"
+        print("")
+        print(border)
+        print(title)
+        print(border)
         print("")
         
     def subtitle_print(cls, title):
@@ -32,15 +45,17 @@ class Tools:
     def change_width(cls, width):
         Tools.default_width = width
         
-    titleprint = classmethod(title_print)
+    big_title_print = classmethod(big_title_print)
+    title_print = classmethod(title_print)
     separator = classmethod(separator)
-    subtitleprint = classmethod(subtitle_print)
+    subtitle_print = classmethod(subtitle_print)
     change_width = classmethod(change_width)
 
 
 if __name__ == "__main__":
     Tools.change_width(60)
-    Tools.titleprint("Mon jolie titre")
+    Tools.big_title_print("Mon jolie gros titre pour le test")
+    Tools.title_print("Mon petit titre pour le test")
     Tools.separator()
-    Tools.subtitleprint("Mon petit sous titre")
+    Tools.subtitle_print("Mon petit sous titre")
     
