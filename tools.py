@@ -57,5 +57,5 @@ if __name__ == "__main__":
     Tools.big_title_print("Mon jolie gros titre pour le test")
     Tools.title_print("Mon petit titre pour le test")
     Tools.separator()
-    Tools.subtitle_print("Mon petit sous titre")
+    Tools.subtitle_print("Mon petit sous titre pour test")
     
