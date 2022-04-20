@@ -1,7 +1,7 @@
 #coding:utf-8
 import shutil
 
-class Tools:
+class Decoration:
     
     default_width = shutil.get_terminal_size().columns / 1.5
     
@@ -9,10 +9,10 @@ class Tools:
         pass
         
     def big_title_print(cls, title):
-        border = "+" + "".center(int(Tools.default_width), "=") + "+"
-        contain = "|" + "".center(int(Tools.default_width), " ") + "|"
+        border = "+" + "".center(int(Decoration.default_width), "=") + "+"
+        contain = "|" + "".center(int(Decoration.default_width), " ") + "|"
         title = " " + title.upper() + " "
-        title = "|" + title.center(int(Tools.default_width), " ") + "|"
+        title = "|" + title.center(int(Decoration.default_width), " ") + "|"
         print("")
         print(border)
         print(contain)
@@ -22,9 +22,9 @@ class Tools:
         print("")
         
     def title_print(cls, title):
-        border = "+" + "".center(int(Tools.default_width), "=") + "+"
+        border = "+" + "".center(int(Decoration.default_width), "=") + "+"
         title = " " + title.upper() + " "
-        title = "|" + title.center(int(Tools.default_width), " ") + "|"
+        title = "|" + title.center(int(Decoration.default_width), " ") + "|"
         print("")
         print(border)
         print(title)
@@ -33,18 +33,18 @@ class Tools:
         
     def subtitle_print(cls, title):
         title = " " + title + " "
-        title = title.center(int(Tools.default_width), "=")
+        title = title.center(int(Decoration.default_width), "=")
         print("")
         print(title)
         print("")
         
     def separator(cls):
         print("")
-        print("".center(int(Tools.default_width), "-"))
+        print("".center(int(Decoration.default_width), "-"))
         print("")
         
     def change_width(cls, width):
-        Tools.default_width = width
+        Decoration.default_width = width
         
     big_title_print = classmethod(big_title_print)
     title_print = classmethod(title_print)
@@ -54,8 +54,8 @@ class Tools:
 
 
 if __name__ == "__main__":
-    Tools.big_title_print("Mon jolie gros titre pour le test")
-    Tools.title_print("Mon petit titre pour le test")
-    Tools.separator()
-    Tools.subtitle_print("Mon petit sous titre pour test")
+    Decoration.big_title_print("Mon jolie gros titre pour le test")
+    Decoration.title_print("Mon petit titre pour le test")
+    Decoration.separator()
+    Decoration.subtitle_print("Mon petit sous titre pour test")
     
